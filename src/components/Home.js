@@ -7,7 +7,7 @@ const Home = () => {
         <div className=' w-10/12 mb-12 flex flex-col gap-6 mx-auto pt-10 md:my-2'>
           <div className="text-yellow-400 text-3xl font-bold">Entry Pass</div>
           <div className='text-white  flex flex-col justify-center gap-5 items-center mx-auto'>
-               <input className='wrapper w-[400px] pt-2 pb-2 pl-1 pr-1 font-semibold text-3xl bg-opacity-10 text-white text-center' type='text'/> 
+               <input className='wrapper w-[300px] pt-2 pb-2 pl-1 pr-1 font-semibold text-3xl bg-opacity-10 text-white text-center' type='text'/> 
               <div className="text-white text-2xl  ">Zeal-ID-{val}</div>
           </div>
         </div>
