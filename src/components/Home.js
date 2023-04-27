@@ -1,6 +1,16 @@
 import React from 'react'
+import { useState } from 'react';
 import "./Home.css"
-const Home = () => {
+function Home ()  {
+
+  const [image, setImage] = useState('');
+
+  const handleImageChange = (e) => {
+    setImage(URL.createObjectURL(e.target.files[0]));
+  };
+  
+
+
     var val = Math.floor(1000 + Math.random() * 9000);
   return (
     <div className='wrapper'>
@@ -11,13 +21,24 @@ const Home = () => {
               <div className="text-white text-2xl  ">Zeal-ID-{val}</div>
           </div>
         </div>
-        <div className='w-10/12  flex flex-col gap-[4.5rem] mx-auto  pt-10 md:my-2'>
+        <div className='w-10/12 pb-16  flex flex-col gap-[4.5rem] mx-auto  pt-10 md:my-2'>
           <div className="text-yellow-400 text-3xl font-bold">ID Card</div>
           <div className='text-white flex flex-col justify-center gap-5 items-center mx-auto'>
-           <img src="" width="" className='mb-48' alt='id'/>
+          
+            {image && <img className="w-[375px] h-[200px]"src={image} alt="uploaded image" />}
+
           </div>
+
+
         </div>
-    </div>
+        {/* <div>
+          <h1>Upload and Display Images with React</h1>
+          <input type="file" onChange={handleImageChange} />
+         {image && <img src={image} alt="uploaded image" />}
+           </div> */}
+           <input className='bg-black w-2' type="file" onChange={handleImageChange} />
+        </div>
+   
   )
 }
 
