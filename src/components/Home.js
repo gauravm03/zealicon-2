@@ -3,10 +3,10 @@ import { useState } from 'react';
 import "./Home.css"
 function Home ()  {
 
-  const [image, setImage] = useState('');
+  const [upload, setupload] = useState('');
 
-  const handleImageChange = (e) => {
-    setImage(URL.createObjectURL(e.target.files[0]));
+  const handleuploadChange = (e) => {
+    setupload(URL.createObjectURL(e.target.files[0]));
   };
   
 
@@ -25,18 +25,18 @@ function Home ()  {
           <div className="text-yellow-400 text-3xl font-bold">ID Card</div>
           <div className='text-white flex flex-col justify-center gap-5 items-center mx-auto'>
           
-            {image && <img className="w-[375px] h-[200px]"src={image} alt="uploaded image" />}
+            {upload && <img className="w-[375px] h-[200px]"src={upload} alt="uploaded" />}
 
           </div>
 
 
         </div>
         {/* <div>
-          <h1>Upload and Display Images with React</h1>
-          <input type="file" onChange={handleImageChange} />
-         {image && <img src={image} alt="uploaded image" />}
+          <h1>Upload and Display uploads with React</h1>
+          <input type="file" onChange={handleuploadChange} />
+         {upload && <img src={upload} alt="uploaded upload" />}
            </div> */}
-           <input className='bg-black w-2' type="file" onChange={handleImageChange} />
+           <input className='bg-black w-2' type="file" onChange={handleuploadChange} />
         </div>
    
   )
